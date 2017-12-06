@@ -1,0 +1,11 @@
+Non registered User stories
+# As a user I want to be able to search upcomming events
+# As a user I want to be able to see the details of every event
+# As a user I want to be able to join an event (If the user is at the correct place at the correct time)
+
+Registered User (organizations)
+# As a registered user I want to be able to sign up
+# As a registered user I want to be able to log in
+# As a registered user I want to be able to add an event
+# As a registered user I want to be able to delete an event
+# As a registered user I want to be able to update my profile
