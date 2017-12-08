@@ -1,3 +1,30 @@
-<p>
-  login works!
-</p>
+<div id="container">
+  <div id="signupTitle">Log in</div>
+  <form novalidate (ngSubmit)="loginClick(myForm)" #myForm="ngForm">
+    <!-- Username -->
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myUsername.errors}">
+      <label>Username</label>
+      <input class="form-control" type="text" name="myUsername" [(ngModel)]="dataFormLogin.username" #myUsername="ngModel" required minlength="6" [disabled]="processing"/>
+      <div class="errorMessage" *ngIf="feedbackEnabled && myUsername.errors">
+        <p *ngIf="myUsername.errors.required" class="validation">username required</p>
+        <p *ngIf="myUsername.errors.minlength" class="validation">username is too short</p>
+      </div>
+    </div>
+    <!-- Password -->  
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myPassword.errors}">
+      <label>Password</label>
+      <input class="form-control" type="password" name="myPassword" [(ngModel)]="dataFormLogin.password" #myPassword="ngModel" required minlength="6"  [disabled]="processing"/>
+      <div class="errorMessage" *ngIf="feedbackEnabled && myPassword.errors">
+        <p *ngIf="myPassword.errors.required" class="validation">password required</p>
+        <p *ngIf="myPassword.errors.minlength" class="validation">password is too short</p>
+      </div>
+    </div>
+  
+    <div class="field submit">
+      <button class="btn" type="submit">Log in</button>
+      <div *ngIf="feedbackEnabled && myForm.invalid">
+        <p class="validation">there are errors in the form, please review the fields</p>
+      </div>
+    </div>
+  </form>
+</div>

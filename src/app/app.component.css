@@ -1,0 +1,133 @@
+/* Styling the header */
+
+
+#main {
+	height: 100%;
+	display: block;
+	overflow-y: auto;
+}
+
+
+#header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    height: 10vw;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row;
+    align-content: center;
+    text-align: center;
+    border-bottom: 1px solid #888787;
+    background-color: white;
+}
+
+#logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    background-image: url("/assets/images/c_icon_countiki.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+#logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 102, 255);
+    width: 60%;
+    font-size: 1.25em;
+    font-weight: bold;
+    font-family: 'Yantramanav', sans-serif;
+}
+
+#loginout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(179, 255, 0);
+    width: 20%;
+    font-size: 0.7em;
+}
+
+.loginoutimage {
+    max-height: 50%;
+    flex-grow: 0.5;
+}
+
+/* Styling the footer */
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    height: 15vw;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row;
+    align-content: center;
+    text-align: center;
+    border-top: 1px solid #888787;
+    background-color:white;
+}
+
+a {
+    width: 100%;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+ }
+
+.clickImage {
+    cursor:pointer;
+    max-width: auto;
+    max-height: 80%;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+#signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+#empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}

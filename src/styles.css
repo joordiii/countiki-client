@@ -1,8 +1,14 @@
 /* GLOBAL STYLES */
 
-* {
+/* Available font
+font-family: 'PT Sans', sans-serif;
+font-family: 'Yantramanav', sans-serif;
+font-family: 'Candal', sans-serif;
+*/
+
+/* * {
     outline: 1px solid blue;
-}
+} */
 
 /* Reset default values */
 
@@ -31,9 +37,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
-}
 ol, ul {
 	list-style: none;
 }
@@ -52,50 +55,33 @@ table {
 
 /* Box sizing */
 html {
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-
-/* Styling the header */
-#header {
-    display: flex;
-    height: 10vw;
-    width: 100%;
-    justify-content: space-around;
-    flex-direction: row;
-    align-content: center;
-    text-align: center;
+box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
 }
 
-#logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-/*     background-color: red;
- */    width: 20%;
-    background-image: url("/assets/images/c_icon_countiki.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+/* BootStrap styles import */
+
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+/* Font Style */
+
+* {
+	font-family: 'PT Sans', sans-serif;
+}
+
+/* layout */
+
+html, body, app-root {
+	height: 100%;
+	overflow: hidden;
+}
+
+app-root {
+	display: block;
 }
 
 
-#logo-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(0, 102, 255);
-    width: 60%;
-}
 
-#loginout {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(179, 255, 0);
-    width: 20%;
-}
+

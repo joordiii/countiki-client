@@ -1,3 +1,84 @@
-<p>
-  signup works!
-</p>
+<div id="container">
+  <div id="signupTitle">Sign up</div>
+  <form novalidate (ngSubmit)="signUpClick(myForm)" #myForm="ngForm">
+    <!-- Organization Name -->
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myOrganization.errors}">
+      <label>Organization Name</label>
+      <input class="form-control" type="text" name="organizationName" [(ngModel)]="dataForm.organizationName" #myOrganization="ngModel" required minlength="6" [disabled]="processing"/>
+      <div class="errorMessage" *ngIf="feedbackEnabled && myOrganization.errors">
+        <p *ngIf="organizationName.errors.required" class="validation">Organization Name required</p>
+        <p *ngIf="organizationName.errors.minlength" class="validation">Organization Name is too short</p>
+      </div>
+    </div>
+    <!-- Address -->
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myAddress.errors}">
+      <label>Address</label>
+      <input class="form-control" type="text" name="myAddress" [(ngModel)]="dataForm.myAddress" #myAddress="ngModel" required minlength="6" [disabled]="processing"/>
+      <div class="errorMessage" *ngIf="feedbackEnabled && myAddress.errors">
+        <p *ngIf="myAddress.errors.required" class="validation">Address required</p>
+        <p *ngIf="myAddress.errors.minlength" class="validation">Address is too short</p>
+      </div>
+    </div>
+    <!-- Telephone -->
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myTelephone.errors}">
+      <label>Telephone</label>
+      <input class="form-control" type="text" name="myTelephone" [(ngModel)]="dataForm.myTelephone" #myTelephone="ngModel" required minlength="6" [disabled]="processing"/>
+      <div class="errorMessage" *ngIf="feedbackEnabled && myTelephone.errors">
+        <p *ngIf="myTelephone.errors.required" class="validation">Telephone required</p>
+        <p *ngIf="myTelephone.errors.minlength" class="validation">Telephone is too short</p>
+      </div>
+    </div>
+    <!-- email -->
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myEmail.errors}">
+      <label>Email</label>
+      <input class="form-control" type="text" name="myEmail" [(ngModel)]="dataForm.myEmail" #myEmail="ngModel" required minlength="6" [disabled]="processing"/>
+      <div class="errorMessage" *ngIf="feedbackEnabled && myEmail.errors">
+        <p *ngIf="myEmail.errors.required" class="validation">Email required</p>
+        <p *ngIf="myEmail.errors.minlength" class="validation">Email is too short</p>
+      </div>
+    </div>
+    <!-- Web -->
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myWeb.errors}">
+      <label>Web</label>
+      <input class="form-control" type="text" name="myWeb" [(ngModel)]="dataForm.myWeb" #myWeb="ngModel" required minlength="6" [disabled]="processing"/>
+      <div class="errorMessage" *ngIf="feedbackEnabled && myWeb.errors">
+        <p *ngIf="myWeb.errors.required" class="validation">Web required</p>
+        <p *ngIf="myWeb.errors.minlength" class="validation">Web is too short</p>
+      </div>
+    </div>
+    <!-- Username -->
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myUsername.errors}">
+      <label>Username</label>
+      <input class="form-control" type="text" name="username" [(ngModel)]="dataForm.username" #myUsername="ngModel" required minlength="6" [disabled]="processing"/>
+      <div class="errorMessage" *ngIf="feedbackEnabled && myUsername.errors">
+        <p *ngIf="myUsername.errors.required" class="validation">username required</p>
+        <p *ngIf="myUsername.errors.minlength" class="validation">username is too short</p>
+      </div>
+    </div>
+    <!-- Password -->  
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myPassword.errors}">
+      <label>Password</label>
+      <input class="form-control" type="password" name="password" [(ngModel)]="dataForm.password" #myPassword="ngModel" required minlength="6"  [disabled]="processing"/>
+      <div class="errorMessage" *ngIf="feedbackEnabled && myPassword.errors">
+        <p *ngIf="myPassword.errors.required" class="validation">password required</p>
+        <p *ngIf="myPassword.errors.minlength" class="validation">password is too short</p>
+      </div>
+    </div>
+    <!-- Space for the Logo Image  here-->  
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myPassword.errors}">
+      <label>Image</label>
+      <input class="form-control" type="photo" name="photo" [(ngModel)]="dataForm.photo" #myPassword="ngModel" required minlength="6"  [disabled]="processing"/>
+      <div class="errorMessage" *ngIf="feedbackEnabled && photo.errors">
+        <p *ngIf="photo.errors.required" class="validation">image required</p>
+        <p *ngIf="photo.errors.minlength" class="validation">image is too short</p>
+      </div>
+    </div>
+  
+    <div class="field submit">
+      <button class="btn" type="submit">Sign up</button>
+      <div *ngIf="feedbackEnabled && myForm.invalid">
+        <p class="validation">there are errors in the form, please review the fields</p>
+      </div>
+    </div>
+  </form>
+</div>
