@@ -1,0 +1,33 @@
+/* * {
+    border: 1px solid blue;
+} */
+
+.cont {
+    border: 1px solid #b3b1b1;
+    height: 200px;
+    width: 100%;
+    margin-bottom: 4%;
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+}
+
+.org, .startDateLabel, .endDateLabel, .placeLabel, .sloganLabel {
+    color: #52d118;
+    font-weight: bold;
+}
+
+.middle {
+    display: flex;
+    flex-direction: row;
+}
+
+.imageOrg {
+    width: 70px;
+    height: 70px;
+}
+
+.datesAndPlace {
+    display: flex;
+    flex-direction: column;
+}

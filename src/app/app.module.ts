@@ -16,11 +16,14 @@ import { ProfileComponent } from './pages/profile/profile.component';
 
 // Services
 import { AuthService} from './services/auth.service';
+import { EventService } from './services/event.service';
 
 // Guards
 import { RequireAuthGuard } from './guards/require-auth-guard.service';
 import { RequireAnonGuard } from './guards/require-anon-guard.service';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { EventShortComponent } from './components/event-short/event-short.component';
+import { ListComponent } from './components/list/list.component';
 
 
 
@@ -46,7 +49,9 @@ const routes: Routes = [
     CreateComponent,
     ProfileComponent,
     HomeComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    EventShortComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,7 @@ const routes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

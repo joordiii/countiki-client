@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
@@ -8,9 +9,11 @@ import { Router } from '@angular/router';
 })
 export class EventComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }
