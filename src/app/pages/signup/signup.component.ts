@@ -12,6 +12,8 @@ import { AuthService} from '../../services/auth.service';
 
 export class SignupComponent implements OnInit {
 
+    user = null;
+
     dataForm = {
       organizationName: '',
       myAddress: '',
@@ -25,14 +27,15 @@ export class SignupComponent implements OnInit {
 
     error: String;
 
-    constructor(private authservice: AuthService, private router: Router) { }
+    constructor(private authService: AuthService, private router: Router) { }
 
     ngOnInit() {
+      this.user = this.authService.getUser();
     }
 
     signUpClick() {
       console.log(this.dataForm);
-      this.authservice.signup(this.dataForm)
+      this.authService.signup(this.dataForm)
         .subscribe(
           () => this.router.navigate(['/home']),
           (err) => this.error = err);

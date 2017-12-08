@@ -24,14 +24,17 @@ export class LoginComponent implements OnInit {
   error: String;
 
 
-  constructor(private authservice: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
+
+  user = null;
 
   ngOnInit() {
+    this.user = this.authService.getUser();
   }
 
   loginClick() {
     console.log(this.dataFormLogin);
-    this.authservice.login(this.dataFormLogin)
+    this.authService.login(this.dataFormLogin)
       .subscribe(
         () => this.router.navigate(['/home']),
         (err) => this.error = err);

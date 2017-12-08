@@ -23,6 +23,17 @@
     background-color: white;
 }
 
+.logoLink {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    background-image: url("/assets/images/c_icon_countiki.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 #logo {
     display: flex;
     flex-direction: column;
@@ -40,7 +51,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(0, 102, 255);
     width: 60%;
     font-size: 1.25em;
     font-weight: bold;
@@ -52,7 +62,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(179, 255, 0);
     width: 20%;
     font-size: 0.7em;
 }
@@ -60,6 +69,16 @@
 .loginoutimage {
     max-height: 50%;
     flex-grow: 0.5;
+}
+
+.buttonLogout {
+    background: none !important;
+    color: inherit;
+    border: none;
+    padding: 0! important;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit !important;
 }
 
 /* Styling the footer */

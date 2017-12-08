@@ -20,6 +20,7 @@ import { AuthService} from './services/auth.service';
 // Guards
 import { RequireAuthGuard } from './guards/require-auth-guard.service';
 import { RequireAnonGuard } from './guards/require-anon-guard.service';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 
 
@@ -44,7 +45,8 @@ const routes: Routes = [
     LoginComponent,
     CreateComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
