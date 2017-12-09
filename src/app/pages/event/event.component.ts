@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EventService } from '../../services/event.service';
 
 
 @Component({
@@ -8,12 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./event.component.css']
 })
 export class EventComponent implements OnInit {
+  eventDetails: any;
 
-
-  constructor() { }
+  constructor(private eventService: EventService) { }
 
   ngOnInit() {
   }
 
-
 }
+

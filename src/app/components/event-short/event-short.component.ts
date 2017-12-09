@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { EventService } from '../../services/event.service';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HomeComponent } from '../../pages/home/home.component';
+
 
 @Component({
   selector: 'app-event-short',
@@ -8,19 +11,8 @@ import { EventService } from '../../services/event.service';
 })
 export class EventShortComponent implements OnInit {
 
-  eventData: Array<object>= [];
-  
-  
-    constructor(private eventService: EventService) { }
-  
+    constructor() { }
+
     ngOnInit() {
-      this.getAllEvents();
-    }
-  
-    getAllEvents() {
-      this.eventService.getAll()
-      .subscribe((data) => {this.eventData = data,
-      console.log(this.eventData);
-    });
     }
 }

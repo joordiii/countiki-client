@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+// Pages
 import { HomeComponent } from './pages/home/home.component';
 import { EventComponent } from './pages/event/event.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -21,16 +22,20 @@ import { EventService } from './services/event.service';
 // Guards
 import { RequireAuthGuard } from './guards/require-auth-guard.service';
 import { RequireAnonGuard } from './guards/require-anon-guard.service';
+
+// Components
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { EventShortComponent } from './components/event-short/event-short.component';
 import { ListComponent } from './components/list/list.component';
+import { OrganizerDetailsComponent } from './components/organizer-details/organizer-details.component';
 
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home',  component: HomeComponent, pathMatch: 'full' },
-  { path: 'event', component: EventComponent, pathMatch: 'full' },
+  /* { path: 'event', component: EventComponent, pathMatch: 'full' }, */
+  { path: 'event/:id', component: EventComponent, pathMatch: 'full'},
   { path: 'auth/signup', component: SignupComponent, pathMatch: 'full' },
   { path: 'auth/login', component: LoginComponent, pathMatch: 'full' }
   /* { path: 'auth/signup', canActivate: [RequireAnonGuard], component: SignupComponent, pathMatch: 'full' },
@@ -51,7 +56,8 @@ const routes: Routes = [
     HomeComponent,
     WelcomeComponent,
     EventShortComponent,
-    ListComponent
+    ListComponent,
+    OrganizerDetailsComponent
   ],
   imports: [
     BrowserModule,

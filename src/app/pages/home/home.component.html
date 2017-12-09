@@ -1,2 +1,24 @@
-<app-welcome></app-welcome>
+<!-- <app-welcome></app-welcome>
 <app-list></app-list>
+<div *ngFor='let event of eventData'>
+    <li>{{ event.startDate}}</li>
+    <li>{{ event.endDate}}</li>
+</div> -->
+
+<app-welcome></app-welcome>
+<app-list [data]="eventData"></app-list> 
+<!-- <p>{{eventData | json}}</p> -->
+
+<!-- <app-welcome></app-welcome>
+<app-list>
+  <div *ngFor='let event of eventData'>
+    <app-event-short [event]="theEvent"></app-event-short>
+  </div> 
+</app-list> -->
+
+<!-- <app-welcome></app-welcome>
+  <div *ngFor='let data of eventData'>
+      <li>{{ data.startDate}}</li>
+      <li>{{ data.endDate}}</li>
+    <app-event-short [data]="theEvent"></app-event-short>
+  </div>  -->
