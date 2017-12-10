@@ -1,0 +1,34 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#createEvent {
+    margin-top: 13%;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+form {
+    margin-top: 10%;
+}
+
+.field {
+    margin-top: 5%;
+}
+
+label {
+    display: block;
+}
+
+.errorMessage {
+    background-color: grey;
+    border: 1px solid red;
+    min-height: 1.25em;
+    line-height: 1.25;
+}
+
+.submit {
+    margin-bottom: 100px;
+}

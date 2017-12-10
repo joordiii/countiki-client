@@ -11,13 +11,18 @@ a:hover {
       background-color: rgb(248, 255, 238);
 }
 
-.orgContainer {
-    margin-top: 10vw;
+.eventContainer {
     display: flex;
     flex-direction: column;
 }
 
-.organizer {
+.labels {
+    color: #52d118;
+    font-weight: bold;
+    margin-right: 2%;
+}
+
+.eventLabel {
     background-color: #52d118;
     font-weight: bold;
     height: 2%;
@@ -35,25 +40,8 @@ a:hover {
     font-weight: bold;
 }
 
-.imageAndText {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-bottom: 2vw;
-}
-
-.image {
-    width: 20%;
-    height: 20%;
-    background-color: rgb(51, 255, 0);
-    margin: 4%;
-    border: 1px solid #b3b1b1;
-}
-
 .text {
     display: flex;
     flex-direction: column;
-    margin: 3% 4% 3% 2%;
+    margin: 3% 4% 3% 4%;
 }
-
-

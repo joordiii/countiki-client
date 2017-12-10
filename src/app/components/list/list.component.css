@@ -2,6 +2,15 @@
     outline: 1px solid blue;
 } */
 
+a {
+    color: inherit; 
+    text-decoration: inherit; 
+  }
+
+  a:hover {
+      background-color: rgb(248, 255, 238);
+  }
+
 .outerContainer {
     margin: 5% 5% 17vw 5%;
     height: auto;
@@ -15,6 +24,7 @@
     font-size: 0.7em;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 6px 6px -6px black;
 }
 
 .org, .startDateLabel, .endDateLabel, .placeLabel, .sloganLabel {

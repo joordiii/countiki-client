@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   getAllEvents() {
     this.eventService.getAll()
-      .subscribe((data) => {this.eventData = data, console.log(this.eventData, '12345');
+      .subscribe((data) => {this.eventData = data, console.log(this.eventData[0], '12345');
       });
       }
   }

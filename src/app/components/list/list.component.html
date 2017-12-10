@@ -1,25 +1,25 @@
 <div class="outerContainer">
-  <a [routerLink]="['event']">
     <div class="cont" *ngFor="let event of data, let i = index">
-        <div class="org"><span>Organizer</span>{{event.organizerName}}</div>
-        <div class="middle">
-          <div class="org"></div>
-          <div class="imageAndText">
-            <div class="image">image</div>
-            <div class="text">
-              <div class="startDateLabel">Start Date</div>
-              <div class="startDate">{{event.startDate}}</div>
-              <div class="endDateLabel">End Date</div>
-              <div class="endDate">{{event.endDate}}</div>
-              <div class="placeLabel">Place</div>
-              <div class="place">{{event.place}}</div>
+        <a [routerLink]="['event', event._id]">
+          <div class="org">Organizer: {{event._id}}</div>
+          <div class="middle">
+            <div class="org"></div>
+            <div class="imageAndText">
+              <div class="image">image</div>
+              <div class="text">
+                <div class="startDateLabel">Start Date</div>
+                <div class="startDate">{{event.startDate}}</div>
+                <div class="endDateLabel">End Date</div>
+                <div class="endDate">{{event.endDate}}</div>
+                <div class="placeLabel">Place</div>
+                <div class="place">{{event.place}}</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="sloganLabel">Slogan</div>
-        <div class="slogan">{{event.slogan}}</div>
+          <div class="sloganLabel">Slogan</div>
+          <div class="slogan">{{event.slogan}}</div>
+        </a>
     </div>
-  </a>
 </div>
 
 

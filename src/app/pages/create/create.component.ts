@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EventService } from '../../services/event.service';
 
 @Component({
   selector: 'app-create',
@@ -8,9 +9,28 @@ import { Router } from '@angular/router';
 })
 export class CreateComponent implements OnInit {
 
-  constructor() { }
+  dataCreateForm = {
+    slogan: '',
+    startDate: '',
+    endDate: '',
+    description: '',
+    location: ''
+  };
+
+  error: String;
+
+  constructor(private eventService: EventService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  createEventClick() {
+    console.log(this.dataCreateForm);
+    this.eventService.postEvent(this.dataCreateForm)
+      .subscribe(
+      () => this.router.navigate(['/home']),
+      (err) => this.error = err);
+      console.log(this.dataCreateForm, 'qwe');
   }
 
 }

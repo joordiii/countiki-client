@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment';
 import { Http, Response } from '@angular/http';
+import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 
 
@@ -18,6 +18,11 @@ export class EventService {
 
   getById() {
     return this.http.get(apiUrl + '/event/:id')
+      .map((res) => res.json());
+  }
+
+  postEvent(event) {
+    return this.http.post(apiUrl + '/event', event)
       .map((res) => res.json());
   }
 

@@ -1,3 +1,48 @@
-<p>
-  create works!
-</p>
+<div id="container">
+  <div id="createEvent">Create Event</div>
+  <form (ngSubmit)="createEventClick(myForm)" #myForm="ngForm" novalidate>
+    <!-- Slogan -->
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && mySlogan.errors}">
+      <label>Slogan</label>
+      <input class="form-control" type="text" name="slogan" [(ngModel)]="dataCreateForm.slogan" #mySlogan="ngModel" required minlength="6" [disabled]="processing"/>
+      <div *ngIf="feedbackEnabled && mySlogan.errors">
+        <p *ngIf="mySlogan.errors.required" class="validation">Slogan required</p>
+        <p *ngIf="mySlogan.errors.minlength" class="validation">Slogan is too short</p>
+      </div>
+    </div>
+    <!-- Start Date -->
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myStartDate.errors}">
+      <label>End date</label>
+      <input class="form-control" type="text" name="startDate" [(ngModel)]="dataCreateForm.startDate" #myStartDate="ngModel" required minlength="6"  [disabled]="processing"/>
+      <div *ngIf="feedbackEnabled && myStartDate.errors">
+        <p *ngIf="myStartDate.errors.required" class="validation">Ending Date required</p>
+        <p *ngIf="myStartDate.errors.minlength" class="validation">Ending Date is too short</p>
+      </div>
+    </div>
+    <!-- End Date -->
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && myEndDate.errors}">
+      <label>End date</label>
+      <input class="form-control" type="text" name="endDate" [(ngModel)]="dataCreateForm.endDate" #myEndDate="ngModel" required minlength="6"  [disabled]="processing"/>
+      <div *ngIf="feedbackEnabled && myEndDate.errors">
+        <p *ngIf="myEndDate.errors.required" class="validation">Ending Date required</p>
+        <p *ngIf="myEndDate.errors.minlength" class="validation">Ending Date is too short</p>
+      </div>
+    </div>
+     <!-- Description -->
+     <div class="field" [ngClass]="{'has-error': feedbackEnabled && myDescription.errors}">
+      <label>Description</label>
+      <input class="form-control" type="text" name="description" [(ngModel)]="dataCreateForm.description" #myDescription="ngModel" required minlength="6" [disabled]="processing"/>
+      <div *ngIf="feedbackEnabled && myDescription.errors">
+        <p *ngIf="myDescription.errors.required" class="validation">Description required</p>
+        <p *ngIf="myDescription.errors.minlength" class="validation">Description is too short</p>
+      </div>
+    </div>
+  
+    <div class="field submit">
+      <button class="btn" type="submit" [disabled]="processing">Create Event</button>
+      <div *ngIf="feedbackEnabled && myForm.invalid">
+        <p class="validation">there are errors in the form, please review the fields</p>
+      </div>
+    </div>
+  </form>
+</div>

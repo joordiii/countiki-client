@@ -15,6 +15,13 @@ import { LoginComponent } from './pages/login/login.component';
 import { CreateComponent } from './pages/create/create.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
+// Components
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { EventShortComponent } from './components/event-short/event-short.component';
+import { ListComponent } from './components/list/list.component';
+import { OrganizerDetailsComponent } from './components/organizer-details/organizer-details.component';
+import { EventLongComponent } from './components/event-long/event-long.component';
+
 // Services
 import { AuthService} from './services/auth.service';
 import { EventService } from './services/event.service';
@@ -23,21 +30,16 @@ import { EventService } from './services/event.service';
 import { RequireAuthGuard } from './guards/require-auth-guard.service';
 import { RequireAnonGuard } from './guards/require-anon-guard.service';
 
-// Components
-import { WelcomeComponent } from './components/welcome/welcome.component';
-import { EventShortComponent } from './components/event-short/event-short.component';
-import { ListComponent } from './components/list/list.component';
-import { OrganizerDetailsComponent } from './components/organizer-details/organizer-details.component';
-
-
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home',  component: HomeComponent, pathMatch: 'full' },
   /* { path: 'event', component: EventComponent, pathMatch: 'full' }, */
-  { path: 'event/:id', component: EventComponent, pathMatch: 'full'},
+  { path: 'home/event/:id', redirectTo: 'event/:id', pathMatch: 'full' },
+  { path: 'event/:id', component: EventComponent, pathMatch: 'full' },
   { path: 'auth/signup', component: SignupComponent, pathMatch: 'full' },
-  { path: 'auth/login', component: LoginComponent, pathMatch: 'full' }
+  { path: 'auth/login', component: LoginComponent, pathMatch: 'full' },
+  { path: 'create', component: CreateComponent, pathMatch: 'full'}
   /* { path: 'auth/signup', canActivate: [RequireAnonGuard], component: SignupComponent, pathMatch: 'full' },
   { path: 'auth/login', canActivate: [RequireAnonGuard], component: LoginComponent, pathMatch: 'full' } */
 
@@ -57,7 +59,8 @@ const routes: Routes = [
     WelcomeComponent,
     EventShortComponent,
     ListComponent,
-    OrganizerDetailsComponent
+    OrganizerDetailsComponent,
+    EventLongComponent
   ],
   imports: [
     BrowserModule,
