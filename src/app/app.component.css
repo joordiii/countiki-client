@@ -1,5 +1,7 @@
 /* Styling the header */
-
+ * {
+    outline: 1px solid blue;
+}
 
 #main {
 	height: 100%;
@@ -143,7 +145,7 @@ a {
     width: 20%;
 }
 
-#empty {
+#settings {
     display: flex;
     flex-direction: column;
     justify-content: center;

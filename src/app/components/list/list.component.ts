@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent} from '../../pages/home/home.component';
+import { EventService } from '../../services/event.service';
 
 @Component({
   selector: 'app-list',
@@ -12,9 +13,10 @@ import { HomeComponent} from '../../pages/home/home.component';
 export class ListComponent implements OnInit {
 @Input() data: Object[];
 
-  constructor() { }
+  constructor(private eventService: EventService) { }
 
   ngOnInit() {
     console.log(this.data);
   }
+
 }

@@ -39,7 +39,8 @@ const routes: Routes = [
   { path: 'event/:id', component: EventComponent, pathMatch: 'full' },
   { path: 'auth/signup', component: SignupComponent, pathMatch: 'full' },
   { path: 'auth/login', component: LoginComponent, pathMatch: 'full' },
-  { path: 'create', component: CreateComponent, pathMatch: 'full'}
+  { path: 'create', canActivate: [RequireAuthGuard], component: CreateComponent, pathMatch: 'full'},
+  { path: 'profile', canActivate: [RequireAuthGuard], component: ProfileComponent, pathMatch: 'full'}
   /* { path: 'auth/signup', canActivate: [RequireAnonGuard], component: SignupComponent, pathMatch: 'full' },
   { path: 'auth/login', canActivate: [RequireAnonGuard], component: LoginComponent, pathMatch: 'full' } */
 

@@ -1,0 +1,35 @@
+/* * {
+    outline: 1px solid blue;
+} */
+
+#profileTittle {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 13%;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #b3b1b1;
+}
+
+.btn {
+    margin: 7% 0;
+    width: 175px;
+    height: 50px;
+    background-color: #52d118;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.myEvents {
+    color: grey;
+    font-weight: bold;
+    font-size: 0.8em;
+    text-align: center;
+    border-bottom: 1px solid #b3b1b1;
+}
