@@ -29,6 +29,7 @@ import { EventService } from './services/event.service';
 // Guards
 import { RequireAuthGuard } from './guards/require-auth-guard.service';
 import { RequireAnonGuard } from './guards/require-anon-guard.service';
+import { MapComponent } from './components/map/map.component';
 
 
 const routes: Routes = [
@@ -44,7 +45,7 @@ const routes: Routes = [
   /* { path: 'auth/signup', canActivate: [RequireAnonGuard], component: SignupComponent, pathMatch: 'full' },
   { path: 'auth/login', canActivate: [RequireAnonGuard], component: LoginComponent, pathMatch: 'full' } */
 
-  /* Continue adding routes signup, login, create and profile */
+
 ];
 
 
@@ -61,7 +62,8 @@ const routes: Routes = [
     EventShortComponent,
     ListComponent,
     OrganizerDetailsComponent,
-    EventLongComponent
+    EventLongComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +71,12 @@ const routes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [AuthService, EventService],
+  providers: [
+    AuthService,
+    EventService,
+    RequireAuthGuard,
+    RequireAnonGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

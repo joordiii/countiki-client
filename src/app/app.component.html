@@ -1,8 +1,17 @@
-<div id="header">
-  <a class="logoLink" [routerLink]="['/home']"><div id="logo"></div></a>
-  <div id="logo-text">COUNTiki</div>
-  <div id="loginout"><img *ngIf="user" class="loginoutimage" src="./assets/images/logout.png" alt="Mountain View">
-    <button *ngIf="user" class="buttonLogout" (click)="clickLogout()">logout</button></div>
+<div id="allHeader">
+  <div id="header">
+<!--     <a class="logoLink" [routerLink]="['/home']"><div id="logo"></div></a>
+    <div id="logo-text">COUNTiki</div>
+    <div id="loginout"><img *ngIf="user" class="loginoutimage" src="./assets/images/logout.png" alt="Mountain View">
+      <button *ngIf="user" class="buttonLogout" (click)="clickLogout()">logout</button></div> -->
+  </div>
+  <div id="headerBigScreen">
+    <div>Home</div>
+    <div>About</div>
+    <div>Sign up</div>
+    <div>Log in</div>
+    <div>My profile</div>
+  </div>
 </div>
 
 <div id="main">
