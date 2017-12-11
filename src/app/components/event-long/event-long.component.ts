@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { EventComponent } from '../../pages/event/event.component';
+import { EventService } from '../../services/event.service';
 
 @Component({
   selector: 'app-event-long',
@@ -10,11 +11,23 @@ import { EventComponent } from '../../pages/event/event.component';
   styleUrls: ['./event-long.component.css']
 })
 export class EventLongComponent implements OnInit {
-@Input() data: Object[];
+@Input() eventId: any;
 
-  constructor() { }
+  data: any;
+
+  constructor(private eventService: EventService) { }
 
   ngOnInit() {
+    this.getEventId(this.eventId);
+  }
+
+  getEventId(id) {
+    console.log('manolito: ', id);
+    this.eventService.getById(id)
+      .subscribe((data) => {
+        this.data = data;
+        console.log(this.data, 'ret');
+      });
   }
 
 }

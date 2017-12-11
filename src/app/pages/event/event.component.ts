@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { EventService } from '../../services/event.service';
 
 
 @Component({
@@ -14,18 +14,16 @@ import { EventService } from '../../services/event.service';
 export class EventComponent implements OnInit {
 
   user = null;
-  eventDetails = Object;
+  eventId: string;
 
-  constructor(private authService: AuthService, private eventService: EventService) { }
+  constructor(private authService: AuthService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.user = this.authService.getUser();
-    this.getEventId();
-  }
-
-  getEventId() {
-    this.eventService.getById()
-      .subscribe((data) => {this.eventDetails = data, console.log(this.eventDetails); });
+    this.route.params.subscribe(params => {
+      this.eventId = params['id'];
+      console.log('Id:' , this.eventId);
+    });
   }
 
 }
