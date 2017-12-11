@@ -1,6 +1,6 @@
 <div id="container">
   <div id="createEvent">Create Event</div>
-  <form (ngSubmit)="createEventClick(myForm)" #myForm="ngForm" novalidate>
+  <form (ngSubmit)="createEventClick()" #myForm="ngForm" novalidate>
     <!-- Slogan -->
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && mySlogan.errors}">
       <label>Slogan</label>

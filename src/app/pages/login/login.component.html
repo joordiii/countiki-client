@@ -1,6 +1,6 @@
 <div id="container">
   <div id="signupTitle">Log in</div>
-  <form novalidate (ngSubmit)="loginClick(myForm)" #myForm="ngForm">
+  <form novalidate (ngSubmit)="loginClick()" #myForm="ngForm">
     <!-- Username -->
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && myUsername.errors}">
       <label>Username</label>

@@ -1,7 +1,8 @@
 <div id="container">
   <div id="signupTitle">Sign up</div>
-  <form novalidate (ngSubmit)="signUpClick(myForm)" #myForm="ngForm">
-    <!-- Organization Name -->
+  <form novalidate (ngSubmit)="signUpClick()" #myForm="ngForm">
+<!--   <form novalidate (ngSubmit)="signUpClick(myForm)" #myForm="ngForm">
+ -->    <!-- Organization Name -->
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && organizationName.errors}">
       <label>Organization Name</label>
       <input class="form-control" type="text" name="organizationName" [(ngModel)]="dataForm.organizationName" #organizationName="ngModel" required minlength="6" [disabled]="processing"/>

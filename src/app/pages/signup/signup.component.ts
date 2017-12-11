@@ -26,6 +26,8 @@ export class SignupComponent implements OnInit {
     };
 
     error: String;
+    feedbackEnabled: boolean;
+    processing: any;
 
     constructor(private authService: AuthService, private router: Router) { }
 

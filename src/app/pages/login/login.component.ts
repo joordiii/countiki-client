@@ -22,6 +22,8 @@ export class LoginComponent implements OnInit {
   };
 
   error: String;
+  feedbackEnabled: boolean;
+  processing: any;
 
 
   constructor(private authService: AuthService, private router: Router) { }

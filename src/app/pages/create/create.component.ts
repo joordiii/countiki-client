@@ -18,6 +18,8 @@ export class CreateComponent implements OnInit {
   };
 
   error: String;
+  feedbackEnabled: boolean;
+  processing: any;
 
   constructor(private eventService: EventService, private router: Router) { }
 
