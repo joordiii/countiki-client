@@ -27,8 +27,6 @@
     flex-direction: row;
     align-content: center;
     text-align: center;
-    border-bottom: 1px solid #888787;
-    background-color: white;
 }
 
 #headerBigScreen {
@@ -99,6 +97,10 @@
 	height: 100%;
 	display: block;
 	overflow-y: auto;
+}
+
+#rightSide {
+    visibility: hidden;
 }
 
 /* Styling the footer */
@@ -175,153 +177,10 @@ a {
 
 @media (min-width: 750px) {
 
-    /* Styling the header */
+/* Styling the header */
 
-* {
+/* * {
     outline: 1px solid blue;
-}
-
-/* #allHeader {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    display: flex;
-    flex-direction: row;
-    height: 3.5vw;
-}
-
-#header {
-    display: flex;
-    width: 50vh;
-    justify-content: space-between;
-    flex-direction: row;
-    align-content: center;
-    text-align: center;
-    border-bottom: 1px solid #888787;
-    background-color: white;
-}
-
-
-.logoLink {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    background-image: url("/assets/images/c_icon_countiki.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-#logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    background-image: url("/assets/images/c_icon_countiki.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-
-#logo-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    font-size: 1.25em;
-    font-weight: bold;
-    font-family: 'Yantramanav', sans-serif;
-}
-
-#loginout {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    font-size: 0.7em;
-}
-
-.loginoutimage {
-    max-height: 50%;
-    flex-grow: 0.5;
-}
-
-.buttonLogout {
-    background: none !important;
-    color: inherit;
-    border: none;
-    padding: 0! important;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit !important;
-}
-
-#footer {
-    display: none;
-} */
-
-/* Footer that now is header */
-
-/* #headerBigScreen {
-    background-color: red;
-    display: flex;
-    height: 3.5vw;
-    width: 50vh;
-    justify-content: space-between;
-    flex-direction: row;
-    align-content: center;
-    text-align: center;
-    border-bottom: 1px solid #888787;
-    background-color: white;
-}
-
-#homeBigScreen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 10%;
-    height: 3.5vw;
-}
-
-#aboutBigScreen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 10%;
-    height: 3.5vw;
-}
-
-#signupBigScreen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 10%;
-    height: 3.5vw;
-}
-
-#loginBigScreen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 10%;
-    height: 3.5vw;
-}
-
-#settingsBigScreen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 10%;
-    height: 3.5vw;
 } */
 
 #allHeader {
@@ -330,22 +189,88 @@ a {
     justify-content: space-between;
     align-items: center;
     height: 3.5vw;
+    border-bottom: 1px solid #888787;
 }
 
 #header {
     height: 3.5vw;
-    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     width: 50%;
 }
 
 #headerBigScreen {
     visibility: visible;
     height: 3.5vw;
-    background-color: green;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    width: 50%;
 }
+
+#logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    background-image: url("/assets/images/c_icon_countiki.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 75%;
+    font-size: 1.25em;
+    font-weight: bold;
+    font-family: 'Yantramanav', sans-serif;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuItem {
+    color: #52d118;
+    font-weight: bold;
+}
+
+a:link {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #000000;
+}
+
+/* Stiling the maib Big Screen */
+
+#main {
+    height: 100%;
+    width: 60%;
+/* 	display: block; */
+	overflow-y: auto;
+}
+
+#rightSide {
+    visibility: visible;
+    position: fixed;
+    width: 40%;
+    height: 96.5vw;
+    top: 3.5vw;
+    right: 0px;
+    background-color: green;
+}
+
+/* Stiling the footer */
 
 #footer{
     display: none;

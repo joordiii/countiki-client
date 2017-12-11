@@ -1,5 +1,5 @@
 <div class="outerContainer">
-    <div class="cont" *ngFor="let event of data, let i = index">
+    <div class="cont fsize" *ngFor="let event of data, let i = index">
         <a [routerLink]="['event', event._id]">
           <div class="org">Organizer: {{event._id}}</div>
           <div class="middle">
