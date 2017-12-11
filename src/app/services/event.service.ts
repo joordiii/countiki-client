@@ -25,6 +25,13 @@ export class EventService {
       .map((res) => res.json());
   }
 
+  getUserEvents() {
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.get(apiUrl + '/user-events/', options)
+      .map((res) => res.json());
+  }
+
   postEvent(event) {
     const options = new RequestOptions();
     options.withCredentials = true;

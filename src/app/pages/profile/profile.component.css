@@ -20,9 +20,10 @@ a:hover {
 }
 
 .orgContainer {
-    margin-top: 10vw;
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
+    
 }
 
 .fsize {
@@ -48,6 +49,7 @@ a:hover {
 }
 
 .imageAndText {
+    margin: 2vw 0;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -58,7 +60,7 @@ a:hover {
     width: 20%;
     height: 20%;
     background-color: rgb(51, 255, 0);
-    margin: 4%;
+    margin: 4% 4% 0 4%;
     border: 1px solid #b3b1b1;
 }
 
@@ -69,6 +71,7 @@ a:hover {
 }
 
 .field {
+    margin-top: 7%;
     margin-bottom: 7%;
     display: flex;
     align-items: center;

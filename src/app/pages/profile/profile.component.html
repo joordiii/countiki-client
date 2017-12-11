@@ -16,4 +16,6 @@
   <button class="btn" type="submit" [routerLink]="['/create']">Create Event</button>
 </div>
 <p class="myEvents">MY EVENTS</p>
+<p>{{allUserEvents| json}}</p>
+<app-list [data]="allUserEvents"></app-list> 
 
