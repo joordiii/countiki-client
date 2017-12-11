@@ -1,5 +1,17 @@
 <div id="profileTittle">Profile Page</div>
-<app-organizer-details></app-organizer-details>
+<div class="orgContainer fsize">
+  <div class="organizer"><span class="posit">Organizer</span></div>
+  <div class="imageAndText">
+    <div class="image"></div>
+    <div class="text">
+      <div class="entity"><span class="labels">Entity:</span>{{user.organizationName}}</div>
+      <div class="address"><span class="labels">Address:</span>{{user.myAddress}}</div>
+      <div class="telf"><span class="labels">Tel:</span>{{user.myTelephone}}</div>
+      <div class="email"><span class="labels">email:</span>{{user.myEmail}}</div>
+      <div class="website"><span class="labels">Website:</span>{{user.myWeb}}</div>
+    </div>
+  </div>
+</div>
 <div class="field submit">
   <button class="btn" type="submit" [routerLink]="['/create']">Create Event</button>
 </div>

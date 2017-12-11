@@ -31,7 +31,9 @@ export class AuthService {
   }
 
   signup(user: User) {
-    return this.http.post(apiUrl + '/signup', user)
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.post(apiUrl + '/signup', user, options)
       .map(res => {
         this.setUser(new User(res.json()));
         return user;
@@ -39,7 +41,9 @@ export class AuthService {
   }
 
   login(user: User) {
-    return this.http.post(apiUrl + '/login', user)
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.post(apiUrl + '/login', user, options)
       .map(res => {
         this.setUser(new User(res.json()));
         return user;
@@ -47,7 +51,9 @@ export class AuthService {
   }
 
   logout() {
-    return this.http.post(apiUrl + '/logout', {})
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.post(apiUrl + '/logout', {}, options)
     .map(res => {
       this.setUser();
       return null;
