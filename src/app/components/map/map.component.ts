@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ElementRef, NgZone, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, NgZone, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
 import {} from '@types/googlemaps';
 
@@ -16,7 +14,6 @@ export class MapComponent implements OnInit {
   public longitude: number;
   public searchControl: FormControl;
   public zoom: number;
-  
 
   @ViewChild('search')
   public searchElementRef: ElementRef;
