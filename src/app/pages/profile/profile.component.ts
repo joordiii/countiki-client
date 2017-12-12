@@ -11,7 +11,7 @@ import { EventService } from '../../services/event.service';
 export class ProfileComponent implements OnInit {
   user = null;
   userDetails: Object;
-  allUserEvents: Object[];
+  allUserEvents;
 
   constructor(private authService: AuthService, private eventService: EventService) { }
 

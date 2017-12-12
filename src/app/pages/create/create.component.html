@@ -37,7 +37,17 @@
         <p *ngIf="myDescription.errors.minlength" class="validation">Description is too short</p>
       </div>
     </div>
-  
+  <!-- Map placement -->
+
+  <div class="form-group">
+    <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+  </div>
+  <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+  </agm-map>
+
+
+  <!-- Submit button -->
     <div class="field submit">
       <button class="btn" type="submit" [disabled]="processing">Create Event</button>
       <div *ngIf="feedbackEnabled && myForm.invalid">

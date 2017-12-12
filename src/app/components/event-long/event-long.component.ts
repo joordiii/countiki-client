@@ -1,8 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, ElementRef, NgZone, ViewChild, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
 import { EventComponent } from '../../pages/event/event.component';
 import { EventService } from '../../services/event.service';
 import { Event } from '../../models/event.model';
+import { MapsAPILoader } from '@agm/core';
 
 @Component({
   selector: 'app-event-long',
@@ -26,19 +28,82 @@ export class EventLongComponent implements OnInit {
     myWeb: '',
   });
 
-  constructor(private eventService: EventService) { }
+  public latitude: Number;
+  public longitude: Number;
+  public searchControl: FormControl;
+  public zoom: number;
+
+ @ViewChild('search')
+  public searchElementRef: ElementRef;
+
+  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone, private eventService: EventService) { }
 
   ngOnInit() {
-    this.getEventId(this.eventId);
-  }
 
-  getEventId(id) {
-    this.eventService.getById(id)
-      .subscribe((data) => {
-        this.data = data;
-        console.log('ret',  this.data);
-        console.log('of',  this.data.location.latitude);
-      });
-  }
+        this.getEventId(this.eventId);
+        console.log('ara si', this.data.location.latitude);
+
+        // set google maps defaults
+        this.zoom = 4;
+        // this.latitude = this.data.location.latitude;
+        // this.longitude = this.data.location.longitude;
+
+        // this.zoom = 4;
+        // this.latitude = 41.390205;
+        // this.longitude = 2.154007; 
+
+        // create search FormControl
+        this.searchControl = new FormControl();
+
+        // set current position
+        /* this.setCurrentPosition(); */
+
+        // load Places Autocomplete
+        this.mapsAPILoader.load().then(() => {
+          const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+            types: ['address']
+          });
+          autocomplete.addListener('place_changed', () => {
+            this.ngZone.run(() => {
+              // get the place result
+              const place: google.maps.places.PlaceResult = autocomplete.getPlace();
+
+              // verify result
+              if (place.geometry === undefined || place.geometry === null) {
+                return;
+              }
+
+              // set latitude, longitude and zoom
+              /* this.latitude = place.geometry.location.lat();
+              this.longitude = place.geometry.location.lng();
+              this.zoom = 12; */
+              this.latitude = place.geometry.location.lat();
+              this.longitude = place.geometry.location.lng();
+              this.zoom = 12;
+            });
+          });
+        });
+      }
+
+      private setCurrentPosition() {
+        if ('geolocation' in navigator) {
+          navigator.geolocation.getCurrentPosition((position) => {
+            this.latitude = position.coords.latitude;
+            this.longitude = position.coords.longitude;
+            this.zoom = 12;
+          });
+        }
+      }
+
+      getEventId(id) {
+        this.eventService.getById(id)
+          .subscribe((data) => {
+            this.data = data;
+            console.log('map',  this.data);
+            console.log('map2',  typeof this.data.location.latitude);
+            this.latitude = this.data.location.latitude ;
+            this.longitude = this.data.location.latitude;
+          });
+      }
 
 }

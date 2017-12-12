@@ -40,7 +40,7 @@ export class MapComponent implements OnInit {
   public searchElementRef: ElementRef;
 
   constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone, private eventService: EventService) {}
-
+  
 
   ngOnInit() {
 

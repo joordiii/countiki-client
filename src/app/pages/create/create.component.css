@@ -30,6 +30,18 @@ label {
     line-height: 1.25;
 }
 
+.form-group {
+    margin-top: 8%;
+}
+
 .submit {
     margin-bottom: 100px;
 }
+
+/* the map */
+
+agm-map {
+    height: 300px;
+
+    
+  }
