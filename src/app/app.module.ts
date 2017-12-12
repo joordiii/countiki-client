@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AgmCoreModule } from '@agm/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
 
 
 import { AppComponent } from './app.component';
@@ -67,9 +69,14 @@ const routes: Routes = [
     MapComponent
   ],
   imports: [
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCG63miEB6h3fKfBJIYU40h4xSCtEgI8Xk',
+      libraries: ['places']
+    }),
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
+    ReactiveFormsModule,
     HttpModule
   ],
   providers: [

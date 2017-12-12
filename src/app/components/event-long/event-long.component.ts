@@ -1,9 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 import { EventComponent } from '../../pages/event/event.component';
 import { EventService } from '../../services/event.service';
+import { Event } from '../../models/event.model';
 
 @Component({
   selector: 'app-event-long',
@@ -13,7 +12,19 @@ import { EventService } from '../../services/event.service';
 export class EventLongComponent implements OnInit {
 @Input() eventId: any;
 
-  data: any;
+  data = new Event({
+    user_id: '',
+    slogan: '',
+    startDate: '',
+    endDate: '',
+    place: '',
+    description: '',
+    organizationName: '',
+    myAddress: '',
+    myTelephone: '',
+    myEmail: '',
+    myWeb: '',
+  });
 
   constructor(private eventService: EventService) { }
 
@@ -22,11 +33,10 @@ export class EventLongComponent implements OnInit {
   }
 
   getEventId(id) {
-    console.log('manolito: ', id);
     this.eventService.getById(id)
       .subscribe((data) => {
         this.data = data;
-        console.log(this.data, 'ret');
+        console.log('ret',  this.data);
       });
   }
 

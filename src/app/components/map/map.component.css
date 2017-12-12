@@ -1,0 +1,8 @@
+/*Stiling the map */
+
+
+/* Map height */
+
+agm-map {
+    height: 300px;
+  }
