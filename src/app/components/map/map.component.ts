@@ -1,7 +1,9 @@
-import { Component, OnInit, ElementRef, NgZone, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, NgZone, ViewChild, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MapsAPILoader } from '@agm/core';
 import {} from '@types/googlemaps';
+import { EventService } from '../../services/event.service';
+import { Event } from '../../models/event.model';
 
 @Component({
   selector: 'app-map',
@@ -9,6 +11,25 @@ import {} from '@types/googlemaps';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
+  @Input() eventId: any;
+/* @Input() mapCenter: {
+  latitude: number;
+  longitude: number;
+}; */
+
+  data = new Event({
+    user_id: '',
+    slogan: '',
+    startDate: '',
+    endDate: '',
+    location: '',
+    description: '',
+    organizationName: '',
+    myAddress: '',
+    myTelephone: '',
+    myEmail: '',
+    myWeb: '',
+  });
 
   public latitude: number;
   public longitude: number;
@@ -18,19 +39,28 @@ export class MapComponent implements OnInit {
   @ViewChild('search')
   public searchElementRef: ElementRef;
 
-  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {}
+  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone, private eventService: EventService) {}
+
 
   ngOnInit() {
+
+    this.getEventId(this.eventId);
+    console.log('ara si', this.data.location.latitude);
+    // console.log('map center: ', this.mapCenter);
     // set google maps defaults
     this.zoom = 4;
-    this.latitude = 39.8282;
-    this.longitude = -98.5795;
+    this.latitude = this.data.location.latitude;
+    this.longitude = this.data.location.latitude;
+
+    /* this.zoom = 4;
+    this.latitude = 41.390205;
+    this.longitude = 2.154007; */
 
     // create search FormControl
     this.searchControl = new FormControl();
 
     // set current position
-    this.setCurrentPosition();
+    /* this.setCurrentPosition(); */
 
     // load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
@@ -48,6 +78,9 @@ export class MapComponent implements OnInit {
           }
 
           // set latitude, longitude and zoom
+          /* this.latitude = place.geometry.location.lat();
+          this.longitude = place.geometry.location.lng();
+          this.zoom = 12; */
           this.latitude = place.geometry.location.lat();
           this.longitude = place.geometry.location.lng();
           this.zoom = 12;
@@ -65,4 +98,17 @@ export class MapComponent implements OnInit {
       });
     }
   }
+
+  getEventId(id) {
+    this.eventService.getById(id)
+      .subscribe((data) => {
+        this.data = data;
+        console.log('map',  this.data);
+        console.log('map2',  this.data.location.latitude);
+      });
+  }
+
 }
+
+
+

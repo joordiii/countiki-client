@@ -14,7 +14,7 @@ import { AuthService } from '../../services/auth.service';
 export class EventComponent implements OnInit {
 
   user = null;
-  eventId: string;
+  eventId: object;
 
   constructor(private authService: AuthService, private route: ActivatedRoute) { }
 

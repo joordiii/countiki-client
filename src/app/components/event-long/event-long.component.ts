@@ -17,7 +17,7 @@ export class EventLongComponent implements OnInit {
     slogan: '',
     startDate: '',
     endDate: '',
-    place: '',
+    location: '',
     description: '',
     organizationName: '',
     myAddress: '',
@@ -37,6 +37,7 @@ export class EventLongComponent implements OnInit {
       .subscribe((data) => {
         this.data = data;
         console.log('ret',  this.data);
+        console.log('of',  this.data.location.latitude);
       });
   }
 

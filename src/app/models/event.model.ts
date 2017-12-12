@@ -10,8 +10,12 @@ export class Event {
     slogan: string;
     startDate: string;
     endDate: string;
-    place: string;
+    location: {
+        latitude: number;
+        longitude: number;
+    };
     description: string;
+    attendance: [object];
 
     constructor(obj: Object = {}) {
       Object.assign(this, obj);

@@ -46,6 +46,7 @@ a:hover {
     flex-direction: row;
     justify-content: flex-start;
     margin-bottom: 2vw;
+    color: #888787;
 }
 
 .image {
@@ -100,6 +101,14 @@ a:hover {
     display: flex;
     flex-direction: column;
     margin: 3% 4% 3% 4%;
+    color: #888787;
+}
+
+.mapLabel {
+    background-color: #52d118;
+    font-weight: bold;
+    height: 4%;
+    width: 100%;
 }
 
 /* Media Queries ----------------------------------------- */
