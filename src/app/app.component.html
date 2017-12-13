@@ -10,7 +10,7 @@
     <div class="menu"><a [routerLink]="['/home']"><span class="menuItem">About</span></a></div>
     <div class="menu"><a [routerLink]="['/auth/signup']"><span class="menuItem">Sign up</span></a></div>
     <div class="menu"><a [routerLink]="['/auth/login']"><span class="menuItem">Log in</span></a></div>
-    <div class="menu"><a [routerLink]="['/profile']"><span class="menuItem">My profile</span></a></div>
+    <div class="menu"><a [routerLink]="['/profile']"><span *ngIf="user" class="myProfile">My profile</span></a></div>
   </div>
 </div>
 

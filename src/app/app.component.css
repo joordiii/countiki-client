@@ -243,6 +243,11 @@ a {
     font-weight: bold;
 }
 
+.myProfile {
+    color: #888787;
+    font-weight: bold;
+}
+
 a:link {
     color: #ffffff;
 }

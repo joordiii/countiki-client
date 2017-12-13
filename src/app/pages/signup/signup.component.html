@@ -68,7 +68,7 @@
     <!-- Space for the Logo Image  here-->  
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && photo.errors}">
       <label>Image</label>
-      <input class="form-control" type="photo" name="photo" [(ngModel)]="dataForm.photo" #photo="ngModel" required minlength="6"  [disabled]="processing"/>
+      <input class="form-control" type="file" name="photo" [(ngModel)]="dataForm.photo" #photo="ngModel" [disabled]="processing"/>
       <div class="errorMessage" *ngIf="feedbackEnabled && photo.errors">
         <p *ngIf="photo.errors.required" class="validation">image required</p>
         <p *ngIf="photo.errors.minlength" class="validation">image is too short</p>

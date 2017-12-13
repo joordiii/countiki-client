@@ -13,7 +13,7 @@
     <!-- Start Date -->
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && myStartDate.errors}">
       <label>End date</label>
-      <input class="form-control" type="text" name="startDate" [(ngModel)]="dataCreateForm.startDate" #myStartDate="ngModel" required minlength="6"  [disabled]="processing"/>
+      <input class="form-control" type="datetime-local" step=60 name="startDate" [(ngModel)]="dataCreateForm.startDate" #myStartDate="ngModel" required minlength="6"  [disabled]="processing"/>
       <div *ngIf="feedbackEnabled && myStartDate.errors">
         <p *ngIf="myStartDate.errors.required" class="validation">Ending Date required</p>
         <p *ngIf="myStartDate.errors.minlength" class="validation">Ending Date is too short</p>
@@ -22,7 +22,7 @@
     <!-- End Date -->
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && myEndDate.errors}">
       <label>End date</label>
-      <input class="form-control" type="text" name="endDate" [(ngModel)]="dataCreateForm.endDate" #myEndDate="ngModel" required minlength="6"  [disabled]="processing"/>
+      <input class="form-control" type="datetime-local" step=60 name="endDate" [(ngModel)]="dataCreateForm.endDate" #myEndDate="ngModel" required minlength="6"  [disabled]="processing"/>
       <div *ngIf="feedbackEnabled && myEndDate.errors">
         <p *ngIf="myEndDate.errors.required" class="validation">Ending Date required</p>
         <p *ngIf="myEndDate.errors.minlength" class="validation">Ending Date is too short</p>
@@ -37,13 +37,14 @@
         <p *ngIf="myDescription.errors.minlength" class="validation">Description is too short</p>
       </div>
     </div>
+
   <!-- Map placement -->
 
   <div class="form-group">
     <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
   </div>
-  <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
-    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+  <agm-map [(latitude)]="latitude" [(longitude)]="longitude" [scrollwheel]="false" [zoom]="zoom">
+    <agm-marker [(latitude)]="latitude" [(longitude)]="longitude"></agm-marker>
   </agm-map>
 
 
@@ -56,3 +57,6 @@
     </div>
   </form>
 </div>
+
+<div></div>
+<div></div>

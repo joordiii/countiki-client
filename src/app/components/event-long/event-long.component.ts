@@ -19,7 +19,13 @@ export class EventLongComponent implements OnInit {
     slogan: '',
     startDate: '',
     endDate: '',
-    location: '',
+    /* location: {
+      latitude: '',
+      longitude: '',
+    }, */
+    location: {
+      coordinates: []
+    },
     description: '',
     organizationName: '',
     myAddress: '',
@@ -45,12 +51,7 @@ export class EventLongComponent implements OnInit {
 
         // set google maps defaults
         this.zoom = 4;
-        // this.latitude = this.data.location.latitude;
-        // this.longitude = this.data.location.longitude;
 
-        // this.zoom = 4;
-        // this.latitude = 41.390205;
-        // this.longitude = 2.154007; 
 
         // create search FormControl
         this.searchControl = new FormControl();
@@ -73,13 +74,13 @@ export class EventLongComponent implements OnInit {
                 return;
               }
 
-              // set latitude, longitude and zoom
               /* this.latitude = place.geometry.location.lat();
               this.longitude = place.geometry.location.lng();
               this.zoom = 12; */
               this.latitude = place.geometry.location.lat();
               this.longitude = place.geometry.location.lng();
               this.zoom = 12;
+
             });
           });
         });
@@ -99,8 +100,8 @@ export class EventLongComponent implements OnInit {
         this.eventService.getById(id)
           .subscribe((data) => {
             this.data = data;
-            console.log('map',  this.data);
-            console.log('map2',  typeof this.data.location.latitude);
+            console.log('map', this.data);
+            console.log('map2', this.data.location.latitude);
             this.latitude = this.data.location.latitude ;
             this.longitude = this.data.location.latitude;
           });

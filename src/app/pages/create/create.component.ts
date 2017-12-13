@@ -4,6 +4,8 @@ import { FormControl } from '@angular/forms';
 import { EventService } from '../../services/event.service';
 import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
+import { AuthService} from '../../services/auth.service';
+
 
 @Component({
   selector: 'app-create',
@@ -20,25 +22,37 @@ export class CreateComponent implements OnInit {
   @ViewChild('search')
   public searchElementRef: ElementRef;
 
+  user = null; 
+
   dataCreateForm = {
     slogan: '',
     startDate: '',
     endDate: '',
     description: '',
-    location: ''
+    location: {
+      latitude: this.latitude,
+      longitude: this.longitude,
+    }
   };
+
 
   error: String;
   feedbackEnabled: boolean;
   processing: any;
 
-  constructor(private eventService: EventService, private router: Router, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) { }
+  constructor(private eventService: EventService,
+    private router: Router,
+    private mapsAPILoader: MapsAPILoader,
+    private ngZone: NgZone,
+    private authService: AuthService) { }
 
   ngOnInit() {
+    this.user = this.authService.getUser();
+
     // set google maps defaults
     this.zoom = 4;
     this.latitude = 39.8282;
-    this.longitude = -98.5795;
+    this.longitude = 12;
 
     // create search FormControl
     this.searchControl = new FormControl();
@@ -70,14 +84,6 @@ export class CreateComponent implements OnInit {
     });
   }
 
-  createEventClick() {
-    console.log(this.dataCreateForm);
-    this.eventService.postEvent(this.dataCreateForm)
-      .subscribe(
-      () => this.router.navigate(['/home']),
-      (err) => this.error = err);
-      console.log(this.dataCreateForm, 'qwe');
-  }
 
   private setCurrentPosition() {
     if ('geolocation' in navigator) {
@@ -87,6 +93,24 @@ export class CreateComponent implements OnInit {
         this.zoom = 12;
       });
     }
+  }
+
+  createEventClick() {
+    this.getCoords();
+    const userAndEventForm = {
+      eventForm: this.dataCreateForm,
+      user: this.user
+    };
+    this.eventService.postEvent(userAndEventForm)
+      .subscribe(
+      () => this.router.navigate(['/home']),
+      (err) => this.error = err);
+      console.log(this.dataCreateForm, 'qwe');
+  }
+
+  getCoords() {
+    this.dataCreateForm.location.latitude = this.latitude;
+    this.dataCreateForm.location.longitude = this.longitude;
   }
 
 }

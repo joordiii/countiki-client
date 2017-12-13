@@ -1,6 +1,6 @@
 <ng-container *ngIf="data">
 <div class="orgContainer fsize">
-  <div class="organizer"><span class="posit">Organizer</span>{{data.user_id.organizationName}}</div>
+  <div class="organizer"><span class="posit">Organizer: </span>{{data.user_id.organizationName}}</div>
   <div class="imageAndText">
     <div class="image"></div>
     <div class="text">
@@ -24,8 +24,8 @@
       <div class="description">{{data.description}}</div>
     </div>
 </div>
-</ng-container>
-<div class="mapLabel"><span class="posit">Map</span></div>
+</ng-container> 
+<div class="mapLabel fsize"><span class="posit">Map</span></div>
 
 <div class="container">
   <div class="form-group">
@@ -37,7 +37,10 @@
   </agm-map>
 </div>
 
+<div class="attendees">
+  <span class="attendeesBold">234.567</span><span class="attendeesText">attendees</span> 
+</div>
 
-<!--<app-map [eventId]="eventId"></app-map>
- <app-map [mapCenter]="data.location"></app-map>
- --><!-- <pre>vaya vaya {{data | json}}</pre> -->
+<div class="field submit">
+  <button class="btn" type="submit" [routerLink]="['/create']">Join the Event</button>
+</div>
