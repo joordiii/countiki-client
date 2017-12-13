@@ -17,6 +17,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CreateComponent } from './pages/create/create.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { AboutComponent } from './pages/about/about.component';
 
 // Components
 import { WelcomeComponent } from './components/welcome/welcome.component';
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home',  component: HomeComponent, pathMatch: 'full' },
   /* { path: 'event', component: EventComponent, pathMatch: 'full' }, */
+  { path: 'about',  component: HomeComponent, pathMatch: 'full' },
   { path: 'home/event/:id', redirectTo: 'event/:id', pathMatch: 'full' },
   { path: 'event/:id', component: EventComponent, pathMatch: 'full' },
   { path: 'auth/signup', canActivate: [RequireAnonGuard], component: SignupComponent, pathMatch: 'full' },
@@ -66,7 +68,8 @@ const routes: Routes = [
     ListComponent,
     OrganizerDetailsComponent,
     EventLongComponent,
-    MapComponent
+    MapComponent,
+    AboutComponent
   ],
   imports: [
     AgmCoreModule.forRoot({

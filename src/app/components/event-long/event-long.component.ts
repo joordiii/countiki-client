@@ -98,12 +98,12 @@ export class EventLongComponent implements OnInit {
 
       getEventId(id) {
         this.eventService.getById(id)
-          .subscribe((data) => {
+          .subscribe((data: Event) => {
             this.data = data;
             console.log('map', this.data);
-            console.log('map2', this.data.location.latitude);
-            this.latitude = this.data.location.latitude ;
-            this.longitude = this.data.location.latitude;
+            console.log('map2', this.data.location.coordinates[0]);
+            this.latitude = this.data.location.coordinates[0] ;
+            this.longitude = this.data.location.coordinates[1];
           });
       }
 
