@@ -38,9 +38,9 @@
 </div>
 
 <div class="attendees">
-  <span class="attendeesBold">234.567</span><span class="attendeesText">attendees</span> 
+  <span class="attendeesBold">{{data.attendance.length}}</span><span class="attendeesText">attendees</span> 
 </div>
 
 <div class="field submit">
-  <button class="btn" type="submit" [routerLink]="['/create']">Join the Event</button>
+  <button class="btn" type="submit" [routerLink]="['/home']" (click)="addAttendeeEvent()">Join the Event</button>
 </div>

@@ -11,8 +11,7 @@ export class Event {
     startDate: string;
     endDate: string;
     location: {
-        latitude: number;
-        longitude: number;
+        coordinates: [number];
     };
     description: string;
     attendance: [object];

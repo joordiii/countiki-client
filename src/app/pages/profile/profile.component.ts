@@ -16,9 +16,12 @@ export class ProfileComponent implements OnInit {
   constructor(private authService: AuthService, private eventService: EventService) { }
 
   ngOnInit() {
-    this.user = this.authService.getUser();
-    this.getUserOwnEvent();
-  }
+    this.authService.userChange$.subscribe((user) => {
+      this.user = user;
+      this.getUserOwnEvent();
+    });
+/*     this.user = this.authService.getUser();
+ */  }
 
   getUserOwnEvent() {
     this.eventService.getUserEvents()

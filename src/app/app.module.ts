@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { FileUploadModule } from '@angular-file-upload';
 
 
 
@@ -40,7 +41,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home',  component: HomeComponent, pathMatch: 'full' },
   /* { path: 'event', component: EventComponent, pathMatch: 'full' }, */
-  { path: 'about',  component: HomeComponent, pathMatch: 'full' },
+  { path: 'about',  component: AboutComponent, pathMatch: 'full' },
   { path: 'home/event/:id', redirectTo: 'event/:id', pathMatch: 'full' },
   { path: 'event/:id', component: EventComponent, pathMatch: 'full' },
   { path: 'auth/signup', canActivate: [RequireAnonGuard], component: SignupComponent, pathMatch: 'full' },

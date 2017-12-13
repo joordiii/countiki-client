@@ -32,6 +32,7 @@ export class EventLongComponent implements OnInit {
     myTelephone: '',
     myEmail: '',
     myWeb: '',
+    attendance: ''
   });
 
   public latitude: Number;
@@ -42,12 +43,11 @@ export class EventLongComponent implements OnInit {
  @ViewChild('search')
   public searchElementRef: ElementRef;
 
-  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone, private eventService: EventService) { }
+  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone, private router: Router, private eventService: EventService) { }
 
   ngOnInit() {
 
         this.getEventId(this.eventId);
-        console.log('ara si', this.data.location.latitude);
 
         // set google maps defaults
         this.zoom = 4;
@@ -101,10 +101,25 @@ export class EventLongComponent implements OnInit {
           .subscribe((data: Event) => {
             this.data = data;
             console.log('map', this.data);
-            console.log('map2', this.data.location.coordinates[0]);
+            console.log('map2', this.data.attendance);
             this.latitude = this.data.location.coordinates[0] ;
             this.longitude = this.data.location.coordinates[1];
           });
+      }
+
+      addAttendeeEvent(id, attendee) {
+      /* addAttendeeEvent(id, attendee) { */
+          const add = {
+          location: {
+            coordinates: [this.latitude, this.longitude]
+          }
+        };
+
+        this.eventService.putAttendee(this.eventId, add)
+        .subscribe(
+          () => this.router.navigate(['/home']),
+          (err) => this.error = err);
+          console.log();
       }
 
 }

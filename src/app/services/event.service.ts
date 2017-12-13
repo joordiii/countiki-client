@@ -39,5 +39,12 @@ export class EventService {
       .map((res) => res.json());
   }
 
+  putAttendee(id, attendee) {
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.put(apiUrl + '/event/' + id, attendee, options)
+      .map((res) => res.json());
+  }
+
 }
 

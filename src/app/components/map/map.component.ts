@@ -44,49 +44,7 @@ export class MapComponent implements OnInit {
 
   ngOnInit() {
 
-    this.getEventId(this.eventId);
-    console.log('ara si', this.data.location.latitude);
-    // console.log('map center: ', this.mapCenter);
-    // set google maps defaults
-    this.zoom = 4;
-    this.latitude = this.data.location.latitude;
-    this.longitude = this.data.location.latitude;
-
-    /* this.zoom = 4;
-    this.latitude = 41.390205;
-    this.longitude = 2.154007; */
-
-    // create search FormControl
-    this.searchControl = new FormControl();
-
-    // set current position
-    /* this.setCurrentPosition(); */
-
-    // load Places Autocomplete
-    this.mapsAPILoader.load().then(() => {
-      const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-        types: ['address']
-      });
-      autocomplete.addListener('place_changed', () => {
-        this.ngZone.run(() => {
-          // get the place result
-          const place: google.maps.places.PlaceResult = autocomplete.getPlace();
-
-          // verify result
-          if (place.geometry === undefined || place.geometry === null) {
-            return;
-          }
-
-          // set latitude, longitude and zoom
-          /* this.latitude = place.geometry.location.lat();
-          this.longitude = place.geometry.location.lng();
-          this.zoom = 12; */
-          this.latitude = place.geometry.location.lat();
-          this.longitude = place.geometry.location.lng();
-          this.zoom = 12;
-        });
-      });
-    });
+/*  */
   }
 
   private setCurrentPosition() {
@@ -104,7 +62,7 @@ export class MapComponent implements OnInit {
       .subscribe((data) => {
         this.data = data;
         console.log('map',  this.data);
-        console.log('map2',  this.data.location.latitude);
+        console.log('map2',  this.data);
       });
   }
 
