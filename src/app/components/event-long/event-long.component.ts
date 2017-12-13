@@ -117,8 +117,7 @@ export class EventLongComponent implements OnInit {
 
         this.eventService.putAttendee(this.eventId, add)
         .subscribe(
-          () => this.router.navigate(['/home']),
-          (err) => this.error = err);
+          () => this.router.navigate(['/home']));
           console.log();
       }
 

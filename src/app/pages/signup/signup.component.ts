@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService} from '../../services/auth.service';
+import { FileUploader } from 'ng2-file-upload';
 
 @Component({
   selector: 'app-signup',
@@ -29,6 +30,12 @@ export class SignupComponent implements OnInit {
     feedbackEnabled: boolean;
     processing: any;
 
+    baseUrl = 'http://localhost:3000';
+
+    uploader: FileUploader = new FileUploader({
+      url: `${this.baseUrl}/auth/upload`
+    });
+
     constructor(private authService: AuthService, private router: Router) { }
 
     ngOnInit() {
@@ -41,6 +48,16 @@ export class SignupComponent implements OnInit {
         .subscribe(
           () => this.router.navigate(['/home']),
           (err) => this.error = err);
-    }
 
-  }
+          if (this.uploader.queue.length) {
+            this.uploader.uploadAll();
+            this.uploader.onCompleteItem = (item: any, response: string) => {
+              const fileData = JSON.parse(response);
+              this.user.picture = fileData.filename;
+              this.signUpClick();
+            };
+          } else {
+            this.signUpClick();
+          }
+    }
+}

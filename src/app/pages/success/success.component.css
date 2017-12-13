@@ -8,7 +8,7 @@
     align-items: center;
     margin: 13% 0 16%;
     color: #888787;
-    font-size: 1.2em;
+    font-size: 2em;
     text-align: center;
     width: 100%;
     padding: 0 4%;
@@ -18,19 +18,11 @@ p {
     margin: 1vw 0;
 }
 
-.highlight {
-    color: black;
-}
-
-.under {
-    text-decoration: underline;
-}
-
 /* Media Queries */
 
 @media (min-width: 750px) {
     
     .cont {
-        font-size: 1.2em; 
+        font-size: 1.5em; 
     }
 }
