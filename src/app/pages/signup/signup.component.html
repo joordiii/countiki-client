@@ -65,16 +65,7 @@
         <p *ngIf="password.errors.minlength" class="validation">password is too short</p>
       </div>
     </div>
-    <!-- Space for the Logo Image  here-->  
-    <div class="field" [ngClass]="{'has-error': feedbackEnabled && photo.errors}">
-      <label>Image</label>
-      <input class="form-control" type="file" name="photo" [(ngModel)]="dataForm.photo" #photo="ngModel" [disabled]="processing"/>
-      <div class="errorMessage" *ngIf="feedbackEnabled && photo.errors">
-        <p *ngIf="photo.errors.required" class="validation">image required</p>
-        <p *ngIf="photo.errors.minlength" class="validation">image is too short</p>
-      </div>
-    </div>
-  
+    <!-- Button -->
     <div class="field submit">
       <button class="btn" type="submit">Sign up</button>
       <div *ngIf="feedbackEnabled && myForm.invalid">

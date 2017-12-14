@@ -15,6 +15,7 @@ a {
     margin: 5% 5% 17vw 5%;
     height: auto;
     color: #888787;
+    font-size: 1.5em;
 }
 
 .cont {
@@ -25,6 +26,7 @@ a {
     display: flex;
     flex-direction: column;
     box-shadow: 0 6px 6px -6px black;
+    padding-bottom: 2vw;
 }
 
 .fsize {
@@ -37,7 +39,7 @@ a {
 }
 
 .org, .sloganLabel, .slogan {
-    margin-left: 2%;
+    margin-left: 4vh;
 } 
 
 .orgName {
@@ -59,7 +61,8 @@ a {
 .image {
     width: 20vw;
     height: 20vw;
-    margin: 2% 4% 2% 2%;
+    margin: 4vw 4vh;
+    border: 1px solid grey;
     background-image: url("../../../assets/images/Ironhack_logo.png");
     background-repeat: no-repeat;
     background-size: 20vw 20vw;
@@ -68,6 +71,10 @@ a {
 .text {
     display: flex;
     flex-direction: column;
+}
+
+.pad {
+    padding: 1vw 0;
 }
 
 /* Media Queries ----------------------------------------- */
@@ -80,16 +87,20 @@ a {
 }
 
 .fsize {
-    font-size: 1.2em;
+    font-size: 0.9em;
 }
 
 .image {
     width: 10vw;
     height: 10vw;
-    margin: 2% 4% 2% 2%;
+    margin: 2vw;
     background-image: url("../../../assets/images/Ironhack_logo.png");
     background-repeat: no-repeat;
     background-size: 10vw 10vw;
+}
+
+.pad {
+    padding: 0.5vw 0;
 }
 
 }

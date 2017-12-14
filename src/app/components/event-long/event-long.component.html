@@ -1,27 +1,27 @@
 <ng-container *ngIf="data">
 <div class="orgContainer fsize">
-  <div class="organizer"><span class="posit">Organizer: </span>{{data.user_id.organizationName}}</div>
+  <div class="organizer"><span class="posit"></span>{{data.user_id.organizationName}}</div>
   <div class="imageAndText">
     <div class="image"></div>
-    <div class="text">
-      <div class="entity"><span class="labels">Entity:</span>{{data.user_id.organizationName}}</div>
-      <div class="address"><span class="labels">Address:</span>{{data.user_id.myAddress}}</div>
-      <div class="telf"><span class="labels">Tel:</span>{{data.user_id.myTelephone}}</div>
-      <div class="email"><span class="labels">email:</span>{{data.user_id.myEmail}}</div>
-      <div class="website"><span class="labels">Website:</span>{{data.user_id.myWeb}}</div>
+    <div class="text1">
+      <div class="entity pad"><span class="labels">Entity:</span>{{data.user_id.organizationName}}</div>
+      <div class="address pad"><span class="labels">Address:</span>{{data.user_id.myAddress}}</div>
+      <div class="telf  pad"><span class="labels">Tel:</span>{{data.user_id.myTelephone}}</div>
+      <div class="email pad"><span class="labels">email:</span>{{data.user_id.myEmail}}</div>
+      <div class="website pad"><span class="labels">Website:</span>{{data.user_id.myWeb}}</div>
     </div>
   </div>
 </div>
 
 <div class="eventContainer fsize">
     <div class="eventLabel"><span class="posit">Event</span></div>    
-    <div class="text">
-      <div class="slogan"><span class="labels">Slogan:</span>{{data.slogan}}</div>
-      <div class="startDate"><span class="labels">Starting Date:</span>{{data.startDate}}</div>
-      <div class="endDate"><span class="labels">Ending Date:</span>{{data.endDate}}</div>
-      <div class="place"><span class="labels">Place:</span>{{data.location.coordinates[0]}} ****** {{data.location.coordinates[1]}}</div>
-      <div class="descriptionLabel"><span class="labels">Description:</span></div>
-      <div class="description">{{data.description}}</div>
+    <div class="text2">
+      <div class="slogan pad"><span class="labels"></span>{{data.slogan}}</div>
+      <div class="startDate pad"><span class="labels">Starting Date:</span>{{data.startDate}}</div>
+      <div class="endDate pad"><span class="labels">Ending Date:</span>{{data.endDate}}</div>
+      <div class="place pad"><span class="labels">Place:</span>{{data.location.coordinates[0]}} ****** {{data.location.coordinates[1]}}</div>
+      <div class="descriptionLabel pad"><span class="labels">Description:</span></div>
+      <div class="description pad">{{data.description}}</div>
     </div>
 </div>
 </ng-container> 

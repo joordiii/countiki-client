@@ -18,11 +18,12 @@ export class CreateComponent implements OnInit {
   public longitude: number;
   public searchControl: FormControl;
   public zoom: number;
+  public address: string;
 
   @ViewChild('search')
   public searchElementRef: ElementRef;
 
-  user = null; 
+  user = null;
 
   dataCreateForm = {
     slogan: '',
@@ -32,9 +33,9 @@ export class CreateComponent implements OnInit {
     location: {
       latitude: this.latitude,
       longitude: this.longitude,
-    }
+    },
+    address: '',
   };
-
 
   error: String;
   feedbackEnabled: boolean;
@@ -78,6 +79,8 @@ export class CreateComponent implements OnInit {
           // set latitude, longitude and zoom
           this.latitude = place.geometry.location.lat();
           this.longitude = place.geometry.location.lng();
+          console.log(place);
+          this.address = place.formatted_address;
           this.zoom = 12;
         });
       });
@@ -105,12 +108,13 @@ export class CreateComponent implements OnInit {
       .subscribe(
       () => this.router.navigate(['/home']),
       (err) => this.error = err);
-      console.log(this.dataCreateForm, 'qwe');
+      console.log(userAndEventForm, 'qwe');
   }
 
   getCoords() {
     this.dataCreateForm.location.latitude = this.latitude;
     this.dataCreateForm.location.longitude = this.longitude;
+    this.dataCreateForm.address = this.address;
   }
 
 }
