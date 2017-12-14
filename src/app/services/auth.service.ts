@@ -41,9 +41,9 @@ export class AuthService {
   }
 
   login(user: User) {
-    /* const options = new RequestOptions();
-    options.withCredentials = true; */
-    return this.http.post(apiUrl + '/login', user, /* options */)
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.post(apiUrl + '/login', user, options)
       .map(res => {
         this.setUser(new User(res.json()));
         return user;
@@ -81,7 +81,6 @@ export class AuthService {
   }
 
   getUser() {
-    console.log('service: ', this.user);
     return this.user;
   }
 }

@@ -33,6 +33,7 @@ export class EventService {
   }
 
   postEvent(event) {
+    console.log('event', event);
     const options = new RequestOptions();
     options.withCredentials = true;
     return this.http.post(apiUrl + '/event', event, options)

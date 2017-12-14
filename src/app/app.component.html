@@ -20,6 +20,10 @@
 </div>
 
 <div id="rightSide">
+    <!-- <img class="mySlides" src="./assets/images/demostration1.png" alt="demostration image 1" title="demostration image 1">
+    <img class="mySlides" src="./assets/images/demonstration2.png" alt="demostration image 2" title="demostration image 2">
+    <img class="mySlides" src="./assets/images/demonstration3.png" alt="demostration image 3" title="demostration image 3">
+    <img class="mySlides" src="./assets/images/demonstration4.png" alt="demostration image 4" title="demostration image 4"> -->
 
 </div>
 
@@ -32,3 +36,20 @@
   <div id="settings"><a class="imageLink" [routerLink]="['/profile']"><img *ngIf="user" class="clickImage" src="./assets/images/settings_green.png" alt="Settings icon"></a></div>
 </div>
 
+<!-- script for slides -->
+<script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>

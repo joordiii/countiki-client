@@ -272,7 +272,15 @@ a:hover {
     height: 96.5vw;
     top: 3.5vw;
     right: 0px;
-    background-color: green;
+}
+
+#rightSide:hover {
+    visibility: visible;
+    position: fixed;
+    width: 40%;
+    height: 96.5vw;
+    top: 3.5vw;
+    right: 0px;
 }
 
 /* Stiling the footer */

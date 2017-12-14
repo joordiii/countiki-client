@@ -30,7 +30,21 @@ p {
 
 @media (min-width: 750px) {
     
-    .cont {
-        font-size: 1.2em; 
-    }
+.cont {
+    font-size: 1.2em; 
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 13% 0 16%;
+    color: #888787;
+    font-size: 1.8em;
+    text-align: center;
+    width: 100%;
+    padding: 0 4%;
+}
+
+
 }

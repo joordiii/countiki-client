@@ -1,11 +1,11 @@
 <div class="outerContainer">
     <div class="cont fsize" *ngFor="let event of data, let i = index">
         <a [routerLink]="['event', event._id]">
-          <div class="org">Organizer: <span class="orgName">{{event._id}}</span></div>
+          <div class="org">Organizer: <span class="orgName">{{event.organizationName}}</span></div>
           <div class="middle">
             <div class="org"></div>
             <div class="imageAndText">
-              <div class="image">image</div>
+              <div class="image"></div>
               <div class="text">
                 <div class="startDateLabel">Start Date</div>
                 <div class="startDate">{{event.startDate}}</div>

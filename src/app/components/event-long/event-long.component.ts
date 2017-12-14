@@ -107,7 +107,7 @@ export class EventLongComponent implements OnInit {
           });
       }
 
-      addAttendeeEvent(id, attendee) {
+      addAttendeeEvent() {
       /* addAttendeeEvent(id, attendee) { */
           const add = {
           location: {
@@ -117,7 +117,7 @@ export class EventLongComponent implements OnInit {
 
         this.eventService.putAttendee(this.eventId, add)
         .subscribe(
-          () => this.router.navigate(['/home']));
+          () => this.router.navigate(['/success']));
           console.log();
       }
 
