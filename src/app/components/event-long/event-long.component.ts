@@ -19,10 +19,6 @@ export class EventLongComponent implements OnInit {
     slogan: '',
     startDate: '',
     endDate: '',
-    /* location: {
-      latitude: '',
-      longitude: '',
-    }, */
     location: {
       coordinates: []
     },
@@ -50,14 +46,11 @@ export class EventLongComponent implements OnInit {
         this.getEventId(this.eventId);
 
         // set google maps defaults
-        this.zoom = 4;
+        this.zoom = 15;
 
 
         // create search FormControl
         this.searchControl = new FormControl();
-
-        // set current position
-        /* this.setCurrentPosition(); */
 
         // load Places Autocomplete
         this.mapsAPILoader.load().then(() => {
@@ -73,27 +66,13 @@ export class EventLongComponent implements OnInit {
               if (place.geometry === undefined || place.geometry === null) {
                 return;
               }
-
-              /* this.latitude = place.geometry.location.lat();
-              this.longitude = place.geometry.location.lng();
-              this.zoom = 12; */
               this.latitude = place.geometry.location.lat();
               this.longitude = place.geometry.location.lng();
-              this.zoom = 12;
+              this.zoom = 15;
 
             });
           });
         });
-      }
-
-      private setCurrentPosition() {
-        if ('geolocation' in navigator) {
-          navigator.geolocation.getCurrentPosition((position) => {
-            this.latitude = position.coords.latitude;
-            this.longitude = position.coords.longitude;
-            this.zoom = 12;
-          });
-        }
       }
 
       getEventId(id) {
@@ -108,7 +87,6 @@ export class EventLongComponent implements OnInit {
       }
 
       addAttendeeEvent() {
-      /* addAttendeeEvent(id, attendee) { */
           const add = {
           location: {
             coordinates: [this.latitude, this.longitude]

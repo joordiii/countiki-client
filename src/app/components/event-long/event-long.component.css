@@ -26,8 +26,8 @@ a:hover {
 .organizer {
     background-color: #52d118;
     font-weight: bold;
-    height: 2%;
     width: 100%;
+    height: 6vw;
 }
 
 .labels {
@@ -93,7 +93,7 @@ a:hover {
 .eventLabel {
     background-color: #52d118;
     font-weight: bold;
-    height: 2%;
+    height: 6vw;
     width: 100%;
 }
 
@@ -112,7 +112,7 @@ a:hover {
 .mapLabel {
     background-color: #52d118;
     font-weight: bold;
-    height: 4%;
+    height: 6vw;
     width: 100%;
 }
 
@@ -172,6 +172,7 @@ visibility: hidden;
     
 .fsize {
     font-size: 1.2em;
+    
 }
 
 .imageAndText {
@@ -205,7 +206,7 @@ visibility: hidden;
 }
 
 .pad {
-    padding: 1vw 0;
+    padding: 0.5vw 0;
 }
 
 .btn {
@@ -216,6 +217,37 @@ visibility: hidden;
     font-weight: bold;
     text-align: center;
     margin: 2vw 0 5vw 0;
+}
+
+.text1 {
+    display: flex;
+    flex-direction: column;
+    margin: 2.5vw 4% 2.5vw 2%;
+}
+
+.text2 {
+    display: flex;
+    flex-direction: column;
+    margin: 2.5vw 4vh 2.5vw 4vh;
+    color: #888787;
+}
+
+.organizer {
+    height: 4vw;
+}
+
+.eventLabel {
+    background-color: #52d118;
+    font-weight: bold;
+    height: 4vw;
+    width: 100%;
+}
+
+.mapLabel {
+    background-color: #52d118;
+    font-weight: bold;
+    height: 4vw;
+    width: 100%;
 }
 
 /* The map */
