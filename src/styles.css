@@ -68,7 +68,9 @@ box-sizing: border-box;
 /* Font Style */
 
 * {
-	font-family: 'PT Sans', sans-serif;
+/* 	font-family: 'PT Sans', sans-serif; 
+	font-family: 'Inconsolata', monospace;*/
+	font-family: 'Archivo Narrow', sans-serif;
 }
 
 /* layout */

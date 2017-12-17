@@ -26,7 +26,7 @@ a {
     display: flex;
     flex-direction: column;
     box-shadow: 0 6px 6px -6px black;
-    padding-bottom: 2vw;
+    margin-bottom: 2vw;
 }
 
 .fsize {

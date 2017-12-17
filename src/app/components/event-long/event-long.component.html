@@ -1,6 +1,6 @@
 <ng-container *ngIf="data">
 <div class="orgContainer fsize">
-  <div class="organizer"><span class="posit"></span>{{data.user_id.organizationName}}</div>
+  <div class="greenLabel"><span class="posit">{{data.user_id.organizationName}}</span></div>
   <div class="imageAndText">
     <div class="image"></div>
     <div class="text1">
@@ -14,18 +14,18 @@
 </div>
 
 <div class="eventContainer fsize">
-    <div class="eventLabel"><span class="posit">Event</span></div>    
+    <div class="greenLabel"><span class="posit">Event</span></div>    
     <div class="text2">
       <div class="slogan pad"><span class="labels"></span>{{data.slogan}}</div>
-      <div class="startDate pad"><span class="labels">Starting Date:</span>{{data.startDate}}</div>
-      <div class="endDate pad"><span class="labels">Ending Date:</span>{{data.endDate}}</div>
+      <div class="startDate pad"><span class="labels">Starting Date:</span>{{data.startDate  | date: 'dd/MM/yyyy hh:mm'}}</div>
+      <div class="endDate pad"><span class="labels">Ending Date:</span>{{data.endDate  | date: 'dd/MM/yyyy hh:mm'}}</div>
       <div class="place pad"><span class="labels">Place:</span>{{data.address}}</div>
       <div class="descriptionLabel pad"><span class="labels">Description:</span></div>
       <div class="description pad">{{data.description}}</div>
     </div>
 </div>
 </ng-container> 
-<div class="mapLabel fsize"><span class="posit">Map</span></div>
+<div class="greenLabel"><span class="posit">Map</span></div>
 
 <div class="container">
   <div class="form-group">
@@ -33,7 +33,8 @@
     spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
   </div>
   <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
-    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+      <agm-marker [latitude]="latitude" [longitude]="longitude" [iconUrl]="iconUrl"></agm-marker>
+    <agm-circle #circle [latitude]="latitude" [longitude]="longitude" [fillColor]="fillColor" [fillOpacity]="fillOpacity" [radius]="radius"></agm-circle>
   </agm-map>
 </div>
 

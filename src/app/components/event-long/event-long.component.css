@@ -23,22 +23,30 @@ a:hover {
     font-size: 1em;
 }
 
-.organizer {
+.greenLabel {
     background-color: #52d118;
     font-weight: bold;
     width: 100%;
     height: 6vw;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 1.3em;
+    color: white;
+}
+
+.posit {
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .labels {
     color: #52d118;
     font-weight: bold;
     margin-right: 2%;
-}
-
-.posit {
-    margin-left: 4%;
-    font-weight: bold;
 }
 
 .imageAndText {
@@ -90,18 +98,6 @@ a:hover {
     margin-right: 2%;
 }
 
-.eventLabel {
-    background-color: #52d118;
-    font-weight: bold;
-    height: 6vw;
-    width: 100%;
-}
-
-.posit {
-    margin-left: 4%;
-    font-weight: bold;
-}
-
 .text2 {
     display: flex;
     flex-direction: column;
@@ -109,16 +105,11 @@ a:hover {
     color: #888787;
 }
 
-.mapLabel {
-    background-color: #52d118;
-    font-weight: bold;
-    height: 6vw;
-    width: 100%;
-}
-
 .slogan {
     font-size: 1.3em;
     font-weight: bold;
+    color: black;
+    text-decoration: underline;
 }
 
 .attendees {
@@ -154,6 +145,8 @@ visibility: hidden;
     align-items: center;
     justify-content: center;
     border-top: 1px solid #b3b1b1;
+    width: auto;
+    height: auto;
 }
 
 .btn {
@@ -164,6 +157,11 @@ visibility: hidden;
     font-weight: bold;
     text-align: center;
     margin: 5vw 0 14vw 0;
+}
+
+.markerSize {
+    width: 2vh;
+    height: 2vw;
 }
 
 /* Media Queries ----------------------------------------- */
@@ -232,28 +230,30 @@ visibility: hidden;
     color: #888787;
 }
 
-.organizer {
-    height: 4vw;
-}
-
-.eventLabel {
+.greenLabel {
     background-color: #52d118;
     font-weight: bold;
-    height: 4vw;
     width: 100%;
-}
-
-.mapLabel {
-    background-color: #52d118;
-    font-weight: bold;
     height: 4vw;
-    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 1.3em;
+    color: white;;
 }
 
 /* The map */
 
 agm-map {
     height: 25vw;
+}
+
+.markerSize {
+    width: 2vh;
+    height: 2vw;
 }
 
 
